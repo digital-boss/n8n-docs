@@ -1,39 +1,40 @@
+![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+
 # n8n Docs
 
 This repository hosts the documentation for [n8n](https://n8n.io/), an extendable workflow automation tool which enables you to connect anything to everything via its open, [fair-code](https://faircode.io/) model. The documentation is live at [docs.n8n.io](https://docs.n8n.io/).
 
 
-## Building the documentation
+## Previewing and building the documentation locally
 
-To build the documentation:
+### Prerequisites
+
+* Python 3.8 or above
+* We recommend using a virtual environment when working with Python, such as [venv](https://docs.python.org/3/tutorial/venv.html).
+
+### Steps
 
 ```bash
 git clone https://github.com/n8n-io/n8n-docs.git
 cd n8n-docs
-npm install
-npm run build
+pip install -r requirements.txt
+# n8n organization members: 
+# Outside your docs project, do:
+git clone https://github.com/n8n-io/mkdocs-material-insiders.git mkdocs-material
+# Navigate back into the docs project and run:
+pip install -e <path-to-mkdocs-material>
+# External contributors: rely on the preview builds on pull requests, or 
+# use the free version of Material for MkDocs (most things are the same, some formatting may be missing)
+pip install mkdocs-material
+# Serve a local preview
+mkdocs serve
+# Or build
+mkdocs build
 ```
-
 
 ## Contributing
 
-To add to the documentation:
-
-```bash
-git clone https://github.com/n8n-io/n8n-docs.git
-cd n8n-docs
-npm install
-npm run dev
-```
-After doing this, visit [http://localhost:8080](http://localhost:8080) to see the docs website. Pages should refresh as you make changes to them.
-
-You can find the contribution guidelines in the [CONTRIBUTING.md](CONTRIBUTING.md) file.
-
-## Structure
-
-The structure of the `/docs` directory mirrors the structure of the docs website itself. Each page has a corresponding markdown file that is compiled to HTML on build. The `README.md` in each directory is the index page for the corresponding section.
-
-The left menu is defined in `/docs/.vuepress/config.js`.
+Please read our [CONTRIBUTING](CONTRIBUTING.md) guide.
 
 
 ## Support
@@ -43,6 +44,7 @@ If you have problems or questions, head to our forum, and we will try to help yo
 
 ## License
 
-n8n-docs is [fair-code](http://faircode.io) licensed under [**Apache 2.0 with Commons Clause**](https://github.com/n8n-io/n8n/blob/master/packages/cli/LICENSE.md).
+n8n-docs is [fair-code](http://faircode.io) licensed under the [**Sustainable Use License**](https://github.com/n8n-io/n8n/blob/master/LICENSE.md).
 
 Additional information about license can be found in the [FAQ](https://docs.n8n.io/#/faq?id=license).
+
