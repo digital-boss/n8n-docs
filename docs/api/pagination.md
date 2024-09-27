@@ -1,8 +1,14 @@
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+description: Pagination in n8n's public REST API.
+contentType: howto
+---
+
 # API pagination
 
 The default page size is 100 results. You can change the page size limit. The maximum permitted size is 250.
 
-When a response contains more than one page, it includes a cursor, which you can use to request subsequent pages.
+When a response contains more than one page, it includes a cursor, which you can use to request the next pages.
 
 For example, say you want to get all active workflows, 150 at a time.
 

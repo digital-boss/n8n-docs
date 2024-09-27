@@ -1,4 +1,11 @@
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+contentType: explanation
+---
+
 # Deployment
+
+--8<-- "_snippets/embed-license.md"
 
 See the [hosting documentation](https://docs.n8n.io/reference/server-setup.html) for detailed setup options.
 
@@ -10,7 +17,7 @@ Due to this, you don't need to use backups except in case of a catastrophic fail
 
 ## Backups
 
-n8n recommends creating nightly backups by attaching another container, and copying all data to this second container. In this manner, RAM usage is negligible, and so does'nt impact the amount of users you can place on the server.
+n8n recommends creating nightly backups by attaching another container, and copying all data to this second container. In this manner, RAM usage is negligible, and so doesn't impact the amount of users you can place on the server.
 
 ## Restarting
 

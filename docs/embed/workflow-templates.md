@@ -1,4 +1,11 @@
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+contentType: howto
+---
+
 # Workflow templates
+
+--8<-- "_snippets/embed-license.md"
 
 n8n provides a library of workflow templates. When embedding n8n, you can:
 
@@ -8,23 +15,13 @@ n8n provides a library of workflow templates. When embedding n8n, you can:
 
 ## Disable workflow templates
 
-In your environment variables, set `N8N_TEMPLATES_ENABLED` to false.
+--8<-- "_snippets/workflows/templates/disable-templates.md"
 
 ## Use your own workflow templates library
 
-In your environment variables, set `N8N_TEMPLATES_HOST` to the base URL of your API.
+--8<-- "_snippets/workflows/templates/custom-templates-library.md"
 
-Your API must provide the same endpoints and data structure as n8n's.
+## Add your workflows to the n8n library
 
-The endpoints are:
+--8<-- "_snippets/workflows/templates/submit-templates.md"
 
-| Method | Path |
-| ------ | ---- |
-| GET | /templates/workflows/`<id>` |
-| GET | /templates/workflows |
-| GET | /templates/collections/`<id>` |
-| GET | /templates/collections | 
-| GET | /templates/categories |
-| GET | /health |
-
-To learn about the data structure, try out the endpoints. You can also [contact us](mailto:support@n8n.io) for more support.

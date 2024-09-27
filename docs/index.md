@@ -1,8 +1,19 @@
-# Welcome
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+title: "Explore n8n Docs: Your Resource for Workflow Automation and Integrations"
+description: Access n8n Docs for comprehensive guides on workflow automation and integrations. Learn how to integrate apps and enhance your automation capabilities.
+contentType: overview
+hide:
+  - path
+---
 
-This is the documentation for [n8n](https://n8n.io/), a [fair-code](http://faircode.io) licensed node-based workflow automation tool.
+# Welcome to n8n Docs
 
-It covers everything from setup to usage and development. It is a work in progress and all [contributions](/contributing/) are welcome.
+
+This is the documentation for [n8n](https://n8n.io/){:target=_blank .external-link}, a [fair-code](http://faircode.io){:target=_blank .external-link} licensed node-based workflow automation tool.
+
+It covers everything from setup to usage and development. It's a work in progress and all [contributions](/help-community/contributing/) are welcome.
+
 
 ## Where to start
 
@@ -14,11 +25,11 @@ It covers everything from setup to usage and development. It is a work in progre
 
     [:octicons-arrow-right-24: Try it out](/try-it-out/)
 
--   __Hosting__
+-   __Choose the right n8n for you__
 
-    Choose the right n8n for you.
+	Cloud, npm, self-host . . . 
 
-    [:octicons-arrow-right-24: Hosting options](/hosting/options/)
+    [:octicons-arrow-right-24: Options](/choose-n8n/)
 
 
 -   __Explore integrations__
@@ -27,11 +38,11 @@ It covers everything from setup to usage and development. It is a work in progre
 
     [:octicons-arrow-right-24: Find your apps](/integrations/)
 
--   __Take a course__
+-   __Build AI functionality__
 
-    n8n's courses provide in-depth examples and walkthroughs.
+    n8n supports building AI functionality and tools.
 
-    [:octicons-arrow-right-24: Start learning](/courses/)    
+    [:octicons-arrow-right-24: Advanced AI](/advanced-ai/)    
 </div>
 
 ## About n8n
@@ -39,5 +50,5 @@ It covers everything from setup to usage and development. It is a work in progre
 n8n (pronounced n-eight-n) helps you to connect any app with an API with any other, and manipulate its data with little or no code.
 
 * Customizable: highly flexible workflows and the option to build custom nodes.
-* Convenient: use the Desktop app or npm to try out n8n, or the Cloud hosting option if you want us to handle the infrastructure.
+* Convenient: use the npm or Docker to try out n8n, or the Cloud hosting option if you want us to handle the infrastructure.
 * Privacy-focused: self-host n8n for privacy and security.

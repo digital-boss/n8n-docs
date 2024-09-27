@@ -1,36 +1,34 @@
-## Error workflow
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+contentType: howto
+description: How to handle execution errors.
+---
 
-For each workflow, an optional Error Workflow can be set in the Workflow Settings. It gets executed if the original execution fails. That makes it possible to, for instance, inform the user via Email or Slack if something goes wrong. The same Error Workflow can be set on multiple workflows.
+# Error handling
 
-The only difference between a regular workflow and an Error Workflow is that it contains an Error Trigger node, so it is important to make sure that this node gets created before setting a workflow as Error Workflow.
+When designing your flow logic, it's a good practice to consider potential errors, and set up methods to handle them gracefully. With an error workflow, you can control how n8n responds to a workflow execution failure.
 
-The Error Trigger node will trigger in case the execution fails and receives information about it. The data looks like this:
+/// note | Investigating errors
+To investigate failed executions, you can:
 
-```json
-[
-	{
-		"execution": {
-			"id": "231",
-			"url": "https://n8n.example.com/execution/231",
-			"retryOf": "34",
-			"error": {
-				"message": "Example Error Message",
-				"stack": "Stacktrace"
-			},
-			"lastNodeExecuted": "Node With Error",
-			"mode": "manual"
-		},
-		"workflow": {
-			"id": "1",
-			"name": "Example Workflow"
-		}
-	}
-]
+* Review your [Executions](/workflows/executions/), for a [single workflow](/workflows/executions/single-workflow-executions/) or [all workflows you have access to](/workflows/executions/all-executions/). You can [load data from previous execution](/workflows/executions/debug/) into your current workflow.
+* Enable [Log streaming](/log-streaming/).
+///
 
-```
+## Create and set an error workflow
 
-All information is always present except:
+For each workflow, you can set an error workflow in **Workflow Settings**. It runs if an execution fails. This means you can, for example, send email or Slack alerts when a workflow execution errors. The error workflow must start with the [Error Trigger](/integrations/builtin/core-nodes/n8n-nodes-base.errortrigger/).
 
-- **execution.id**: Only present when the execution gets saved in the database
-- **execution.url**: Only present when the execution gets saved in the database
-- **execution.retryOf**: Only present when the execution is a retry of a previously failed execution
+You can use the same error workflow for multiple workflows.
+
+--8<-- "_snippets/flow-logic/create-set-error-workflow.md"
+
+## Error data
+
+--8<-- "_snippets/integrations/builtin/core-nodes/error-trigger/error-data.md"
+
+## Cause a workflow execution failure using Stop And Error
+
+When you create and set an error workflow, n8n runs it when an execution fails. Usually, this is due to things like errors in node settings, or the workflow running out of memory.
+
+You can add the [Stop And Error](/integrations/builtin/core-nodes/n8n-nodes-base.stopanderror/) node to your workflow to force executions to fail under your chosen circumstances, and trigger the error workflow.

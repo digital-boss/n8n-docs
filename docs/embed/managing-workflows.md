@@ -1,4 +1,11 @@
+---
+#https://www.notion.so/n8n/Frontmatter-432c2b8dff1f43d4b1c8d20075510fe4
+contentType: howto
+---
+
 # Workflow management in Embed
+
+--8<-- "_snippets/embed-license.md"
 
 When managing an embedded n8n deployment, spanning across teams or organizations, you will likely need to run the same (or similar) workflows for multiple users. There are two available options for doing so:
 
@@ -9,9 +16,9 @@ When managing an embedded n8n deployment, spanning across teams or organizations
 
 
 
-!!! warning
-    The APIs referenced in this document are subject to change at any time. Be sure the check for continued functionality with each version upgrade.
-
+/// warning
+The APIs referenced in this document are subject to change at any time. Be sure the check for continued functionality with each version upgrade.
+///
 
 ## Workflow per user
 
@@ -27,7 +34,7 @@ Here you need to capture all credentials for any node/service this user must aut
 
 ### 2. Create user credentials
 
-After all relevant credential details have been obtained, you can proceed to create the relevant service credentials in n8n. This can be done via the Editor UI or API call.
+After all relevant credential details have been obtained, you can proceed to create the relevant service credentials in n8n. This can be done using the Editor UI or API call.
 
 
 #### Using the Editor UI
@@ -378,10 +385,10 @@ There are four steps to follow to implement this method:
 
 The details and scope of this workflow will vary greatly according to the individual use case, however there are a few design implementations to keep in mind:
 
-* This workflow must be triggered by a [Webhook](https://docs.n8n.io/nodes/n8n-nodes-base.webhook/#webhook) node.
+* This workflow must be triggered by a [Webhook](/integrations/builtin/core-nodes/n8n-nodes-base.webhook/) node.
 * The incoming webhook call must contain the user’s credentials and any other workflow parameters required.
-* Each node where the user’s credentials are needed should use an [expression](https://docs.n8n.io/nodes/expressions.html) so that the node’s credential field reads the credential provided in the webhook call.
-* Save and activate the workflow, ensuring the [Production URL](https://docs.n8n.io/nodes/n8n-nodes-base.webhook/#node-reference) is selected for the Webhook node.
+* Each node where the user’s credentials are needed should use an [expression](/code/expressions/) so that the node’s credential field reads the credential provided in the webhook call.
+* Save and activate the workflow, ensuring the production URL is selected for the Webhook node. Refer to [webhook node](/integrations/builtin/core-nodes/n8n-nodes-base.webhook/) for more information.
 
 ### Call the workflow
 
